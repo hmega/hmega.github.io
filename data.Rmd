@@ -1,0 +1,24 @@
+---
+title: "Data Used in This Project"
+---
+In this project I will be exploring how people view the dangers of global warming. I wanted to know what population of Americans still don't believe global warming is dangerous. If we can isolate this group of people we can develop tactics to convince them of the reality of our planet's destruction and hopefully inspire them to do something about it. If the myriad of other reason's not to re-elect President Trump don't hold up, maybe we can convince people to not re-elect him for the very important purpose of not allowing the United States to back out of the Paris Climate Agreement. 
+
+The data I will be using for this project comes from the 2016 General Social Survey. It includes interviews from 62,466 Spanish and English speaking persons over the age of 18, living in non-institutionalized arrangements within the United States. I believe that there is an association between political identification and the view that rising world temperatures are dangerous. 
+
+The null hypothesis for this project asssumes there is no association between political party and view that rising world temperatures are dangerous. The alternative hypothesis is that there is an association between the two. 
+
+The first GSS 2016 variable I will be using is VAR: tempgen. This is an ordinal variable. This GSS question asks: Do you think that a rise in the world's temperature caused by the greenhouse affect is 1. Extremely dangerous 2.Very dangerous 3.Somewhat dangerous 4. Not very dangerous 5. Not dangerous
+
+Below is a frequency distribution of responses to this question:
+```{r}
+table (gss$tempgen) 
+```
+
+The second GSS 2016 variable I will be using is VAR: partyID, which is a nominal variable. This question asks: Generally speaking, do you usually think of yourself as a Republican, Democrat, Independent, or what? 0. Strong Democrat 1. Not strong Democrat 2. Indepenent near Democrat 3.Independent 4. Independent near Republican 5. Not strong Republican 6. Strong Republican 7. Other
+
+Below is a frequency distribution of responses to this question: 
+```{r}
+table(gss$partyid)
+```
+
+Other possible mitigating factors I will be exploring include education and income level. 

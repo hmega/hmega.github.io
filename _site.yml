@@ -1,0 +1,26 @@
+name: "Megan's Website"
+navbar:
+  title: "Megan's Website"
+  left:
+    - text: "Welcome"
+      href: index.html
+    - text: "Data Used"
+      href: data.html
+    - text: "Method"
+      href: method.html
+    - text: "Results"
+      href: results.html
+    - text: "Conclusion"
+      href: conclusion.html
+    - text: "About Me"
+      href: about.html
+    - text: "Contact Information"
+      href: contact.html
+output:
+  html_document:
+    theme: cosmo
+    highlight: textmate
+    include:
+      after_body: footer.html
+    css: styles.css
+output_dir: "."
