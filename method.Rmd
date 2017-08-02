@@ -8,7 +8,7 @@ Below is a contingency table showing party identification in the rows and view o
 This is a bar chart representing the same information. I chose to display this information in a bar chart since it includes nominal and ordinal variables. 
 ```{r}
 barplot(TempParty, beside=TRUE, col=colors, main="Dangers of Global Warming by Political Affiliation", ylab= "Frequency", xlab="How Dangerous is Global Warming", names.arg=c("Extremely", "Very","Somewhat", "Not Very", "Not"))
-legend("topright", c("Strong Dem", "Not Strongg Dem", "Ind Near Dem", "Independent", "Ind Near Rep", "Not Strong Rep", "Strong Rep"), bty="n", fill=colors)
+legend("topright", c("Strong Dem", "Not Strong Dem", "Ind Near Dem", "Independent", "Ind Near Rep", "Not Strong Rep", "Strong Rep"), bty="n", fill=colors)
 ```
 
 After reviewing the bar chart I wanted to test the level of association between political identification and belief that global warming is dangerous. To do this I chose to use the chi square test. 
