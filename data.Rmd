@@ -14,7 +14,7 @@ Below is a frequency distribution of responses to this question:
 table (gss$tempgen) 
 ```
 
-The second GSS 2016 variable I will be using is VAR: partyID, which is a nominal variable. This question asks: Generally speaking, do you usually think of yourself as a Republican, Democrat, Independent, or what? 0. Strong Democrat 1. Not strong Democrat 2. Indepenent near Democrat 3.Independent 4. Independent near Republican 5. Not strong Republican 6. Strong Republican.I have excluded the response "Other", which had 72 responses. This is because it is difficult to interpret results from the response "other". It could mean a person is "Green Party" or "Beer Lovers Party" which will not give us usefull information.
+The second GSS 2016 variable I will be using is VAR: partyID, which is a nominal variable. This question asks: Generally speaking, do you usually think of yourself as a Republican, Democrat, Independent, or what? 0. Strong Democrat 1. Not strong Democrat 2. Indepenent near Democrat 3.Independent 4. Independent near Republican 5. Not strong Republican 6. Strong Republican.I have excluded the response "Other", which had 72 responses. This is because it is difficult to interpret results from the response "other". It could mean a person is "Green Party" or "Beer Lovers Party" which will not give us useful information.
 
 Below is a frequency distribution of responses to this question: 
 ```{r}
