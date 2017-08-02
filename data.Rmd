@@ -7,14 +7,14 @@ The data I will be using for this project comes from the 2016 General Social Sur
 
 The null hypothesis for this project asssumes there is no association between political party and view that rising world temperatures are dangerous. The alternative hypothesis is that there is an association between the two. 
 
-The first GSS 2016 variable I will be using is VAR: tempgen. This is an ordinal variable. This GSS question asks: Do you think that a rise in the world's temperature caused by the greenhouse affect is 1. Extremely dangerous 2.Very dangerous 3.Somewhat dangerous 4. Not very dangerous 5. Not dangerous
+The first GSS 2016 variable I will be using is VAR: tempgen. This is an ordinal variable, however, I will be treating it as an interval ratio variable for statistical analysis. This GSS question asks: Do you think that a rise in the world's temperature caused by the greenhouse affect is 1. Extremely dangerous 2.Very dangerous 3.Somewhat dangerous 4. Not very dangerous 5. Not dangerous
 
 Below is a frequency distribution of responses to this question:
 ```{r}
 table (gss$tempgen) 
 ```
 
-The second GSS 2016 variable I will be using is VAR: partyID, which is a nominal variable. This question asks: Generally speaking, do you usually think of yourself as a Republican, Democrat, Independent, or what? 0. Strong Democrat 1. Not strong Democrat 2. Indepenent near Democrat 3.Independent 4. Independent near Republican 5. Not strong Republican 6. Strong Republican 7. Other
+The second GSS 2016 variable I will be using is VAR: partyID, which is a nominal variable. This question asks: Generally speaking, do you usually think of yourself as a Republican, Democrat, Independent, or what? 0. Strong Democrat 1. Not strong Democrat 2. Indepenent near Democrat 3.Independent 4. Independent near Republican 5. Not strong Republican 6. Strong Republican.I have excluded the response "Other", which had 72 responses. This is because it is difficult to interpret results from the response "other". It could mean a person is "Green Party" or "Beer Lovers Party" which will not give us usefull information.
 
 Below is a frequency distribution of responses to this question: 
 ```{r}

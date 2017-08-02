@@ -227,7 +227,7 @@ $(document).ready(function () {
 ##   6  5 13 30 23 16</code></pre>
 <p>This is a bar chart representing the same information. I chose to display this information in a bar chart since it includes nominal and ordinal variables.</p>
 <pre class="r"><code>barplot(TempParty, beside=TRUE, col=colors, main=&quot;Dangers of Global Warming by Political Affiliation&quot;, ylab= &quot;Frequency&quot;, xlab=&quot;How Dangerous is Global Warming&quot;, names.arg=c(&quot;Extremely&quot;, &quot;Very&quot;,&quot;Somewhat&quot;, &quot;Not Very&quot;, &quot;Not&quot;))
-legend(&quot;topright&quot;, c(&quot;Strong Dem&quot;, &quot;Not Strong Dem&quot;, &quot;Ind Near Dem&quot;, &quot;Independent&quot;, &quot;Ind Near Rep&quot;, &quot;Not Strong Rep&quot;, &quot;Strong Rep&quot;, &quot;Other&quot;), bty=&quot;n&quot;, fill=colors)</code></pre>
+legend(&quot;topright&quot;, c(&quot;Strong Dem&quot;, &quot;Not Strongg Dem&quot;, &quot;Ind Near Dem&quot;, &quot;Independent&quot;, &quot;Ind Near Rep&quot;, &quot;Not Strong Rep&quot;, &quot;Strong Rep&quot;), bty=&quot;n&quot;, fill=colors)</code></pre>
 <p><img src="method_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <p>After reviewing the bar chart I wanted to test the level of association between political identification and belief that global warming is dangerous. To do this I chose to use the chi square test.</p>
 <pre class="r"><code>chisq.test(TempParty)</code></pre>
@@ -237,7 +237,7 @@ legend(&quot;topright&quot;, c(&quot;Strong Dem&quot;, &quot;Not Strong Dem&quot
 ##  Pearson&#39;s Chi-squared test
 ## 
 ## data:  TempParty
-## X-squared = 186.27, df = 28, p-value &lt; 2.2e-16</code></pre>
+## X-squared = 175.75, df = 24, p-value &lt; 2.2e-16</code></pre>
 
 <p>Copyright &copy; 2017 Megan Harrington, Inc. All rights reserved.</p>
 

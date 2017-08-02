@@ -1,3 +1,4 @@
 ---
 title: "Conclusion"
 ---
+In our statistical analysis we see that Political Party Identification does have a significant affect on a person's view of the dangers of global warming. 
