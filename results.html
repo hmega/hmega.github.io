@@ -215,7 +215,7 @@ $(document).ready(function () {
 
 
 <p>I used the chi-square test to test the association between political party identification and view on the dangers of global warming. I found that the p value was equal to .00000000000000022, therefore we can safely reject the null hypothesis with a 1% confidence level. This means that there is an association between political identity and views on the dangers of global warming.</p>
-<p>I then wanted to mitigate other potentially influential factors such as income and education. I used the ANOVA test to control for education first, and then education and income. I have lm() written in the R section of this page, but for some reason it is not translating to the website. The website shows an earlier version of the page.</p>
+<p>I then wanted to mitigate other potentially influential factors such as income and education. I used the linear regression model to view political party identification and its affect on a person’s view of the dangers of global warming. Next, I wanted to control for education, and then education and income. I am not sure why, but the site is not showing linear regression models.</p>
 <pre class="r"><code>summary(lm(tempgen ~ partyid, data = gss))</code></pre>
 <pre><code>## 
 ## Call:
@@ -248,7 +248,7 @@ $(document).ready(function () {
 ##   (1952 observations deleted due to missingness)
 ## Multiple R-squared:  0.154,  Adjusted R-squared:  0.153 
 ## F-statistic: 153.1 on 1 and 841 DF,  p-value: &lt; 2.2e-16</code></pre>
-<pre class="r"><code>summary(lm(tempgen ~ partyid, +educ, data = gss))</code></pre>
+<pre class="r"><code>summary(lm(tempgen ~ partyid, + educ, data = gss))</code></pre>
 <pre><code>## 
 ## Call:
 ## lm(formula = tempgen ~ partyid, data = gss, subset = +educ)
@@ -280,7 +280,7 @@ $(document).ready(function () {
 ##   (1813 observations deleted due to missingness)
 ## Multiple R-squared:  2.306e-06,  Adjusted R-squared:  -0.00102 
 ## F-statistic: 0.002255 on 1 and 978 DF,  p-value: 0.9621</code></pre>
-<pre class="r"><code>summary(lm(tempgen ~ partyid, +educ, + income, data = gss))</code></pre>
+<pre class="r"><code>summary(lm(tempgen ~ partyid, + educ,+income, data = gss))</code></pre>
 <pre><code>## 
 ## Call:
 ## lm(formula = tempgen ~ partyid, data = gss, subset = +educ, weights = +income)
