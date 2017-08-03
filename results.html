@@ -215,31 +215,103 @@ $(document).ready(function () {
 
 
 <p>I used the chi-square test to test the association between political party identification and view on the dangers of global warming. I found that the p value was equal to .00000000000000022, therefore we can safely reject the null hypothesis with a 1% confidence level. This means that there is an association between political identity and views on the dangers of global warming.</p>
-<p>I then wanted to mitigate other potentially influential factors such as income and education. I used the ANOVA test to control for education first, and then education and income.</p>
-<pre class="r"><code>summary(aov(tempgen ~ partyid, data = gss))</code></pre>
-<pre><code>##              Df Sum Sq Mean Sq F value Pr(&gt;F)    
-## partyid       1  166.3  166.30   153.1 &lt;2e-16 ***
-## Residuals   841  913.2    1.09                   
+<p>I then wanted to mitigate other potentially influential factors such as income and education. I used the ANOVA test to control for education first, and then education and income. I have lm() in my code, but for some reason it is not translating to the website.</p>
+<pre class="r"><code>summary(lm(tempgen ~ partyid, data = gss))</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = tempgen ~ partyid, data = gss)
+## 
+## Residuals:
+## &lt;Labelled double&gt;
+##      Min       1Q   Median       3Q      Max 
+## -2.10044 -0.87599  0.02182  0.79737  3.02182 
+## 
+## Labels:
+##  value               label
+##      1 extremely dangerous
+##      2      very dangerous
+##      3  somewhat dangerous
+##      4  not very dangerous
+##      5       not dangerous
+##  NA(n)                  NA
+##  NA(d)                  DK
+##  NA(i)                 IAP
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  1.75373    0.06054   28.97   &lt;2e-16 ***
+## partyid      0.22445    0.01814   12.38   &lt;2e-16 ***
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 1952 observations deleted due to missingness</code></pre>
-<pre class="r"><code>summary(aov(tempgen ~ partyid + educ, data = gss))</code></pre>
-<pre><code>##              Df Sum Sq Mean Sq F value  Pr(&gt;F)    
-## partyid       1  166.3  166.30   154.8 &lt; 2e-16 ***
-## educ          1   11.0   10.95    10.2 0.00146 ** 
-## Residuals   840  902.3    1.07                    
+## 
+## Residual standard error: 1.042 on 841 degrees of freedom
+##   (1952 observations deleted due to missingness)
+## Multiple R-squared:  0.154,  Adjusted R-squared:  0.153 
+## F-statistic: 153.1 on 1 and 841 DF,  p-value: &lt; 2.2e-16</code></pre>
+<pre class="r"><code>summary(lm(tempgen ~ partyid, +educ, data = gss))</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = tempgen ~ partyid, data = gss, subset = +educ)
+## 
+## Residuals:
+## &lt;Labelled double&gt;
+##      Min       1Q   Median       3Q      Max 
+## -0.98265  0.01744  0.01744  0.01744  0.01744 
+## 
+## Labels:
+##  value               label
+##      1 extremely dangerous
+##      2      very dangerous
+##      3  somewhat dangerous
+##      4  not very dangerous
+##      5       not dangerous
+##  NA(n)                  NA
+##  NA(d)                  DK
+##  NA(i)                 IAP
+## 
+## Coefficients:
+##               Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  2.983e+00  1.020e-02 292.515   &lt;2e-16 ***
+## partyid     -8.882e-05  1.870e-03  -0.047    0.962    
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 1952 observations deleted due to missingness</code></pre>
-<pre class="r"><code>summary(aov(tempgen ~ partyid + educ+ income, data = gss))</code></pre>
-<pre><code>##              Df Sum Sq Mean Sq F value  Pr(&gt;F)    
-## partyid       1  133.5  133.53  120.08 &lt; 2e-16 ***
-## educ          1   11.9   11.88   10.69 0.00113 ** 
-## income        1    0.0    0.01    0.01 0.91919    
-## Residuals   722  802.9    1.11                    
+## 
+## Residual standard error: 0.1307 on 978 degrees of freedom
+##   (1813 observations deleted due to missingness)
+## Multiple R-squared:  2.306e-06,  Adjusted R-squared:  -0.00102 
+## F-statistic: 0.002255 on 1 and 978 DF,  p-value: 0.9621</code></pre>
+<pre class="r"><code>summary(lm(tempgen ~ partyid, +educ, + income, data = gss))</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = tempgen ~ partyid, data = gss, subset = +educ, weights = +income)
+## 
+## Weighted Residuals:
+## &lt;Labelled double&gt;
+##          Min           1Q       Median           3Q          Max 
+## -1.22802e-12  1.54000e-15  1.54000e-15  1.54000e-15  1.54000e-15 
+## 
+## Labels:
+##  value               label
+##      1 extremely dangerous
+##      2      very dangerous
+##      3  somewhat dangerous
+##      4  not very dangerous
+##      5       not dangerous
+##  NA(n)                  NA
+##  NA(d)                  DK
+##  NA(i)                 IAP
+## 
+## Coefficients:
+##               Estimate Std. Error    t value Pr(&gt;|t|)    
+## (Intercept)  3.000e+00  8.981e-16  3.340e+15   &lt;2e-16 ***
+## partyid     -3.401e-16  2.783e-16 -1.222e+00    0.222    
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 2069 observations deleted due to missingness</code></pre>
+## 
+## Residual standard error: 3.972e-14 on 957 degrees of freedom
+##   (1834 observations deleted due to missingness)
+## Multiple R-squared:  0.4999, Adjusted R-squared:  0.4994 
+## F-statistic: 956.5 on 1 and 957 DF,  p-value: &lt; 2.2e-16</code></pre>
 
 <p>Copyright &copy; 2017 Megan Harrington, Inc. All rights reserved.</p>
 

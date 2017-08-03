@@ -3,7 +3,7 @@ title: "Results"
 ---
 I used the chi-square test to test the association between political party identification and view on the dangers of global warming. I found that the p value was equal to .00000000000000022, therefore we can safely reject the null hypothesis with a 1% confidence level. This means that there is an association between political identity and views on the dangers of global warming. 
 
-I then wanted to mitigate other potentially influential factors such as income and education. I used the ANOVA test to control for education first, and then education and income. 
+I then wanted to mitigate other potentially influential factors such as income and education. I used the ANOVA test to control for education first, and then education and income. I have lm() in my code, but for some reason it is not translating to the website. 
 
 ```{r}
 summary(lm(tempgen ~ partyid, data = gss))
